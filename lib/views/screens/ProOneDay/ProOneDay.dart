@@ -11,94 +11,83 @@ class homePage extends StatefulWidget {
   State<homePage> createState() => _homePageState();
 }
 
-
 class _homePageState extends State<homePage> {
-
   @override
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-
-
-
-  //  loadPreferences();
-  }
-  // Future<void> loadPreferences() async {
-  //   final prefs = await SharedPreferences.getInstance();
-  //
-  //   setState(() {
-  //     isGridView = prefs.getBool('isGridView') ?? false;
-  //     isDarkTheme = prefs.getBool('isDarkTheme') ?? false;
-  //   });
-  //
-  // }
-
   Widget build(BuildContext context) {
     ProProvider proProviderTrue =
         Provider.of<ProProvider>(context, listen: true);
     ProProvider proProviderFalse =
         Provider.of<ProProvider>(context, listen: false);
 
-
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Project Day One"),
-        actions: [
-          IconButton(
-            onPressed: () {
-
-             setState(() {
-               isGridView= !isGridView;
-             });
-
-            },
-            icon: Icon(isGridView ? Icons.view_list : Icons.grid_view),
-          ),
-        ],
-      ),
-      body:isGridView ? box1(proProviderFalse) :box2(proProviderFalse)
-
-
-    );
+        appBar: AppBar(
+          title: Text("Project Day One"),
+          actions: [
+            IconButton(
+              onPressed: () {
+                proProviderFalse.todoView();
+              },
+              icon: Icon(proProviderTrue.isGridView
+                  ? Icons.view_list
+                  : Icons.grid_view),
+            ),
+          ],
+        ),
+        body: proProviderTrue.isGridView
+            ? box1(proProviderFalse)
+            : box2(proProviderFalse));
   }
 
-  box1(ProProvider proProviderFalse)
-  {
-    return    ListView.builder(
+  box1(ProProvider proProviderFalse) {
+    return ListView.builder(
       itemCount: proProviderFalse.productList.length,
       itemBuilder: (context, index) {
-        return ListTile(
-          leading:
-          Text('${proProviderFalse.productList[index].userId}'),
-          title: Text("${proProviderFalse.productList[index].title}"),
-          trailing:
-          Text('${proProviderFalse.productList[index].completed}'),
+        return Card(
+          child: ListTile(
+
+            leading: Text('${proProviderFalse.productList[index].userId}'),
+            title: Text("${proProviderFalse.productList[index].title}"),
+            trailing: Icon(
+              proProviderFalse.productList[index].completed
+                  ? Icons.check_circle
+                  : Icons.pending_rounded,
+              size: 30,
+              color: proProviderFalse.productList[index].completed ? Colors.green : Colors.red,
+            ),
+          ),
         );
       },
     );
   }
 
-  box2(ProProvider proProviderFalse)
-  {
-      GridView.builder(
-      gridDelegate:
-          SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
-
+  box2(ProProvider proProviderFalse) {
+  return  GridView.builder(
+      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+        crossAxisCount: 2,
+        crossAxisSpacing: 8.0,
+        mainAxisSpacing: 8.0,
+      ),
       itemCount: proProviderFalse.productList.length,
       itemBuilder: (context, index) {
-
         return SingleChildScrollView(
-          child: Column(
-            children: [
-            Card(
-              child: Column(
-                children: [
-                  Text('${proProviderFalse.productList[index].userId}'),
-                ],
+          child: Card(
+            child: ListTile(
+              leading: Text('${proProviderFalse.productList[index].userId}'),
+                title: Text('${proProviderFalse.productList[index].title}'),
+            
+
+              subtitle: Icon(
+                proProviderFalse.productList[index].completed
+                    ? Icons.check_circle
+                    : Icons.pending_rounded,
+                size: 30,
+                color: proProviderFalse.productList[index].completed ? Colors.green : Colors.red,
               ),
-            )
-            ],
+            
+            
+            ),
+            
+            
           ),
         );
       },
