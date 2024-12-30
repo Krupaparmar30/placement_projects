@@ -39,6 +39,14 @@ class ProProvider extends ChangeNotifier
     prefs.setBool('isGridView', isGridView);
     notifyListeners();
   }
+  Future<void> todoTheme() async {
+    isDarkTheme = !isDarkTheme;
+    print(isDarkTheme);
+    final prefs = await SharedPreferences.getInstance();
+    prefs.setBool('isDarkTheme', isDarkTheme);
+    notifyListeners();
+  }
+
   ProProvider()
   {
     fromList();
