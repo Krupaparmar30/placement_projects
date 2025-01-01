@@ -16,8 +16,8 @@ class ProProvider extends ChangeNotifier
 
 
 
-  void fromList()
-  async {
+  Future<void> fromList()
+   async {
     List pro=await proHelper.proApiHelper();
     productList =pro.map((e)=>ProModalOne.fromJson(e)).toList();
     notifyListeners();
@@ -28,6 +28,7 @@ class ProProvider extends ChangeNotifier
   Future<void> loadPreferences() async {
     final prefs = await SharedPreferences.getInstance();
       isGridView = prefs.getBool('isGridView') ?? false;
+    isDarkTheme = prefs.getBool('isDarkTheme') ?? false;
     notifyListeners();
   }
 
