@@ -3,29 +3,37 @@
 A new Flutter project.
 
 * Application Description
+  
 This is a lightweight and functional Todo Application designed to manage and display tasks with a focus on usability and aesthetics. The application integrates key features like theme customization, view toggling, and status differentiation, ensuring an optimal user experience.
 
 * Features
 Fetch and Display Todos
 
-* Fetch todos from an API (e.g., JSONPlaceholder).
+
+Fetch todos from an API (e.g., JSONPlaceholder).
 Displays todos in an intuitive and clean layout.
 List & Grid View Toggle
 
-* Allows users to switch between List View and Grid View.
+
+Allows users to switch between List View and Grid View.
 The selected view preference is saved using Shared Preferences for persistent behavior.
 Task Status Differentiation
 
-* Distinguishes between completed and pending todos:
+
+Distinguishes between completed and pending todos:
 Completed Todos: Highlighted with a distinct color (e.g., green).
 Pending Todos: Highlighted with another color (e.g., red).
+
+
 Dark and Light Theme
+Offers support for both Dark Mode and Light Mode themes.
 
-* Offers support for both Dark Mode and Light Mode themes.
+
 The selected theme preference is saved using Shared Preferences, allowing the app to remember the user's choice.
-Responsive and Attractive UI
 
-* A visually appealing interface with smooth animations and responsiveness.
+
+Responsive and Attractive UI
+A visually appealing interface with smooth animations and responsiveness.
 Ensures compatibility across devices of various sizes.
 
 * Tool Kit
