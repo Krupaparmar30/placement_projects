@@ -1,4 +1,4 @@
-![LO7](https://github.com/user-attachments/assets/0cbbf553-69fd-41d3-9181-8e3fb6823189)# plecement_projects
+# plecement_projects
 
 A new Flutter project.
 
