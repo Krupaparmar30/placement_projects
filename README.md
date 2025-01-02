@@ -1,4 +1,4 @@
-# plecement_projects
+![LO7](https://github.com/user-attachments/assets/0cbbf553-69fd-41d3-9181-8e3fb6823189)# plecement_projects
 
 A new Flutter project.
 
@@ -62,6 +62,6 @@ https://github.com/user-attachments/assets/94eb5334-aff7-4c64-8407-5af36b0df7bf
 
  <img src="https://github.com/user-attachments/assets/d99439cc-5556-4334-b442-7943ece26bba" height=28% width=32%>
  <img src="https://github.com/user-attachments/assets/ff8b0c65-11d3-486f-b9b3-2094bda255d1" height=28% width=32%>
- <img src="https://github.com/user-attachments/assets/c2c04932-0c54-4887-9395-b8adf8d8e8dc" height=28% width=32%>
+ <img src="https://github.com/user-attachments/assets/12f0069b-3bc1-4b84-9ce8-33f713437659" height=28% width=32%>
  <img src="https://github.com/user-attachments/assets/19f2bb1b-f475-4051-a484-6549474a3d87" height=28% width=32%>
  <img src="https://github.com/user-attachments/assets/cd6635a6-ce3d-42c1-bdcc-790bfd442668" height=28% width=32%>
